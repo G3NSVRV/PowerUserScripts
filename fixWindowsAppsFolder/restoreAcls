@@ -1,7 +1,7 @@
 #!/bin/bash
 ACL_WORKING_PATH="/mnt/c/Program Files/WindowsApps"
 ACL_TEMPLATE="./template.acl"
-ACL_OUTPUT_FILE="/mnt/c/restore.acl"
+ACL_OUTPUT_FILE="/mnt/c/Users/Public/restore.acl"
 
 cat /dev/null > "$ACL_OUTPUT_FILE"
 
@@ -16,13 +16,16 @@ done
 
 iconv -f UTF-8 -t UTF-16LE "$ACL_OUTPUT_FILE" -o "$ACL_OUTPUT_FILE.bak"
 mv "$ACL_OUTPUT_FILE.bak" "$ACL_OUTPUT_FILE"
-ACL_WIN_PATH="$(echo $ACL_OUTPUT_FILE | sed 's/\/mnt\/\(.*\)\//\1:\\/g')"
 
-powershell.exe -Command "Start-Process cmd \"/c icacls.exe \"\"C:\Program Files\WindowsApps\"\" /setowner \"\"BUILT IN\Administrators\"\" /t\" -Verb RunAs"
+ACL_WIN_FILE_PATH="$(echo $ACL_OUTPUT_FILE | sed 's/^\/mnt\/\([a-z]\)\//\1:\\/g' | sed 's/\//\\/g')"
+ACL_WIN_WORKING_PATH="$(echo $ACL_WORKING_PATH | sed 's/^\/mnt\/\([a-z]\)\//\1:\\/g' | sed 's/\//\\/g')"
+
+powershell.exe -Command "Start-Process cmd \"/c icacls.exe \"\"$ACL_WIN_WORKING_PATH\"\" /setowner \"\"BUILTIN\Administrators\"\" /t\" -Verb RunAs"
 sleep 3
-powershell.exe -Command "Start-Process cmd \"/c icacls.exe \"\"C:\Program Files\WindowsApps\"\" /restore \"\"$ACL_WIN_PATH\"\"\" -Verb RunAs"
-sleep 5
-powershell.exe -Command "Start-Process cmd \"/c icacls.exe \"\"C:\Program Files\WindowsApps\"\" /setowner \"\"NT SERVICE\TrustedInstaller\"\" /t\" -Verb RunAs"
+powershell.exe -Command "Start-Process cmd \"/c icacls.exe \"\"$ACL_WIN_WORKING_PATH\"\" /restore \"\"$ACL_WIN_FILE_PATH\"\"\" -Verb RunAs"
+sleep 6
+powershell.exe -Command "Start-Process cmd \"/c icacls.exe \"\"$ACL_WIN_WORKING_PATH\"\" /setowner \"\"NT SERVICE\TrustedInstaller\"\" /t\" -Verb RunAs"
+sleep 3
 echo "The Folder 'C:\Program Files\WindowsApps' has been restored successfully"
 
 rm -f "$ACL_OUTPUT_FILE"
