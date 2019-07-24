@@ -24,3 +24,5 @@ powershell.exe -Command "Start-Process cmd \"/c icacls.exe \"\"C:\Program Files\
 sleep 5
 powershell.exe -Command "Start-Process cmd \"/c icacls.exe \"\"C:\Program Files\WindowsApps\"\" /setowner \"\"NT SERVICE\TrustedInstaller\"\" /t\" -Verb RunAs"
 echo "The Folder 'C:\Program Files\WindowsApps' has been restored successfully"
+
+rm -f "$ACL_OUTPUT_FILE"
