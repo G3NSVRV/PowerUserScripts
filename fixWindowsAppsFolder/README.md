@@ -12,7 +12,7 @@ It uses the default SID capability to work with UWP which is:
 
 If you found and or feel that your SID is different, please replace it on the **template.acl** file
 
-You can read for more information (on this site)[https://support.microsoft.com/en-us/help/4502539/some-sids-do-not-resolve-into-friendly-names]
+You can read for more information [on this site](https://support.microsoft.com/en-us/help/4502539/some-sids-do-not-resolve-into-friendly-names)
 ## Usage
 The script will automatically change the owner of the folder "C:\Program Files\WindowsApps" using the group "Administrators", then it will apply the ACL and return to the owner "NT Service\TrustedInstaller".
 
