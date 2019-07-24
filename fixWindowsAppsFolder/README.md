@@ -14,7 +14,8 @@ If you found and or feel that your SID is different, please replace it on the **
 
 You can read for more information (on this site)[https://support.microsoft.com/en-us/help/4502539/some-sids-do-not-resolve-into-friendly-names]
 ## Usage
-please change the owner of the folder "C:\Program Files\WindowsApps" using the group "Administrators", Replacing Child Items, then when it finish, do the same but using the user "NT Service\TrustedInstaller".
+The script will automatically change the owner of the folder "C:\Program Files\WindowsApps" using the group "Administrators".
+Then it will apply the ACL and return to the owner "NT Service\TrustedInstaller".
 
 ```
 $: ./restoreAcls
