@@ -28,7 +28,7 @@ https://rg3.github.io/youtube-dl/
 *(manual install)* `sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl`
 
 ### (downloadYoutube)
-`sudo wget https://raw.githubusercontent.com/G3NSVRV/downloadYoutube/master/downloadYoutube -O /usr/local/bin/downloadYoutube`
+`sudo wget https://raw.githubusercontent.com/G3NSVRV/PowerUserScripts/master/downloadYoutube/downloadYoutube -O /usr/local/bin/downloadYoutube`
 
 ### (add executable properties)
 `sudo chmod a+rx /usr/local/bin/youtube-dl /usr/local/bin/downloadYoutube`
