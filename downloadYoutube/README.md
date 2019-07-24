@@ -23,6 +23,8 @@ https://rg3.github.io/youtube-dl/
 
 *(archlinux (mainstream))* `sudo pacman -S youtube-dl`
 
+*(through pip)* `pip install youtube-dl`
+
 *(manual install)* `sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl`
 
 ### (downloadYoutube)
