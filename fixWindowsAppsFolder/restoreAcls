@@ -1,7 +1,7 @@
 #!/bin/bash
 ACL_WORKING_PATH="/mnt/c/Program Files/WindowsApps"
 ACL_TEMPLATE="./template.acl"
-ACL_OUTPUT_FILE="/mnt/d/restore.acl"
+ACL_OUTPUT_FILE="/mnt/c/restore.acl"
 
 cat /dev/null > "$ACL_OUTPUT_FILE"
 
