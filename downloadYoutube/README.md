@@ -31,7 +31,7 @@ https://rg3.github.io/youtube-dl/
 `sudo wget https://raw.githubusercontent.com/G3NSVRV/PowerUserScripts/master/downloadYoutube/downloadYoutube -O /usr/local/bin/downloadYoutube`
 
 ### (add executable properties)
-`sudo chmod a+rx /usr/local/bin/youtube-dl /usr/local/bin/downloadYoutube`
+`sudo chmod a+rx /usr/local/bin/downloadYoutube`
 
 ## 2. Usage
 ```
