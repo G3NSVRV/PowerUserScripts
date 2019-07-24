@@ -19,6 +19,16 @@ https://rg3.github.io/youtube-dl/
 `https://pkgs.org/download/ffmpeg`
 
 ### (youtube-dl)
+##### debian / ubuntu
+`sudo apt install youtube-dl`
+
+##### centos / redhat
+`sudo yum install youtube-dl`
+
+##### archlinux (mainstream)
+`sudo pacman -S youtube-dl`
+
+##### or download from here
 `sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl`
 
 ### (downloadYoutube)
