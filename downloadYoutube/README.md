@@ -6,30 +6,24 @@ https://rg3.github.io/youtube-dl/
 
 ## 1. Install
 ### (ffmpeg) it is mandatory to join video and audio in one file
-##### debian / ubuntu
-`sudo apt install ffmpeg`
 
-##### centos / redhat
-`sudo yum install ffmpeg`
+*(debian / ubuntu)* `sudo apt install ffmpeg`
 
-##### archlinux (mainstream)
-`sudo pacman -S ffmpeg`
+*(centos / redhat)* `sudo yum install ffmpeg`
 
-##### or download from here
-`https://pkgs.org/download/ffmpeg`
+*(archlinux (mainstream))* `sudo pacman -S ffmpeg`
+
+*(manual install)* `https://pkgs.org/download/ffmpeg`
 
 ### (youtube-dl)
-##### debian / ubuntu
-`sudo apt install youtube-dl`
 
-##### centos / redhat
-`sudo yum install youtube-dl`
+*(debian / ubuntu)* `sudo apt install youtube-dl`
 
-##### archlinux (mainstream)
-`sudo pacman -S youtube-dl`
+*(centos / redhat)* `sudo yum install youtube-dl`
 
-##### or download from here
-`sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl`
+*(archlinux (mainstream))* `sudo pacman -S youtube-dl`
+
+*(manual install)* `sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl`
 
 ### (downloadYoutube)
 `sudo wget https://raw.githubusercontent.com/G3NSVRV/downloadYoutube/master/downloadYoutube -O /usr/local/bin/downloadYoutube`
