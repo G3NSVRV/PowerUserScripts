@@ -1,0 +1,23 @@
+#!/bin/bash
+ACL_WORKING_PATH="/mnt/c/Program Files/WindowsApps"
+ACL_TEMPLATE="./template.acl"
+ACL_OUTPUT_FILE="/mnt/d/restore.acl"
+
+cat /dev/null > "$ACL_OUTPUT_FILE"
+
+echo "Please accept the elevated Prompt"
+
+for ACL_FOLDER in $(ls "$ACL_WORKING_PATH" | grep ".*[.].*")
+do
+	ACL_APPNAME=$(echo "$ACL_FOLDER" | cut -d "_" -f1,5)
+	echo "$ACL_FOLDER" >> "$ACL_OUTPUT_FILE"
+	sed 's/ACL_APPNAME/'$ACL_APPNAME'/g' "$ACL_TEMPLATE" >> "$ACL_OUTPUT_FILE"
+done
+
+iconv -f UTF-8 -t UTF-16LE "$ACL_OUTPUT_FILE" -o "$ACL_OUTPUT_FILE.bak"
+mv "$ACL_OUTPUT_FILE.bak" "$ACL_OUTPUT_FILE"
+ACL_WIN_PATH="$(echo $ACL_OUTPUT_FILE | sed 's/\/mnt\/\(.*\)\//\1:\\/g')"
+
+powershell.exe -Command "Start-Process cmd \"/c icacls.exe \"\"C:\Program Files\WindowsApps\"\" /restore \"\"$ACL_WIN_PATH\"\"\" -Verb RunAs"
+
+echo "The Folder 'C:\Program Files\WindowsApps' has been restored successfully"

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -z $1 ]
+then
+workingPath=$PWD
+else
+workingPath=$1
+fi
+find "$workingPath" -type f -exec chmod 644 "{}" \;
+find "$workingPath" -type d -exec chmod 755 "{}" \;
