@@ -1,0 +1,58 @@
+#!/bin/bash
+VIDEO_URL=$1
+BINARY_PATH=$(which youtube-dl)
+
+if [ -z "$(which ffmpeg)" ]
+then
+	echo "Please consider to install 'ffmpeg' to merge audio and video together"
+fi
+
+if [ -n "$BINARY_PATH" ]
+then
+	if [ -n "$VIDEO_URL" ]
+	then
+		RESULT=$($BINARY_PATH -F "$VIDEO_URL")
+		if [[ -n $RESULT ]]
+		then
+			shift
+			var="$BINARY_PATH -F $VIDEO_URL | awk '{print \$1}'"
+			#######
+			for (( ; ; ))
+			do
+				if [ "$(($(eval "$var|grep 137")))" -eq "$((137))" ]
+				then
+					echo "Descargando en FHD"
+					$BINARY_PATH -f 137+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
+					break
+				fi
+
+				if [ "$(($(eval $(echo $var"|grep 136"))))" -eq "$((136))" ]
+				then
+					echo "Descargando en HD"
+					$BINARY_PATH -f 136+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
+					break
+				fi
+
+				if [ "$(($(eval $(echo $var"|grep 134"))))" -eq "$((134))" ]
+				then
+					echo "Descargando en SD";
+					$BINARY_PATH -f 134+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
+					break
+				fi
+
+				if [ "$(($(eval $(echo $var"|grep 133"))))" -eq "$((133))" ]
+				then
+					echo "Descargando en LD";
+					$BINARY_PATH -f 133+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
+					break
+				fi
+
+			done
+
+		fi
+	else
+		echo -e "Please insert a valid youtube video\nUsage: download_youtube https://www.youtube.com/watch?v=mK6sf5YX9ds\nOr: download_youtube https://youtu.be/mK6sf5YX9ds"
+	fi
+else
+	echo -e "Please save the youtube-dl full path using the command:\nexport $BINARY_PATH=/path/to/youtube-dl"
+fi
