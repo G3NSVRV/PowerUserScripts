@@ -33,7 +33,7 @@ https://rg3.github.io/youtube-dl/
 
 ## 2. Usage
 ```
-$: downloadYoutube $video_url
+$: downloadYoutube $videoUrl
 ```
 
 #### example:
