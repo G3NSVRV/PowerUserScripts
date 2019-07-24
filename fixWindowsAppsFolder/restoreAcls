@@ -18,6 +18,9 @@ iconv -f UTF-8 -t UTF-16LE "$ACL_OUTPUT_FILE" -o "$ACL_OUTPUT_FILE.bak"
 mv "$ACL_OUTPUT_FILE.bak" "$ACL_OUTPUT_FILE"
 ACL_WIN_PATH="$(echo $ACL_OUTPUT_FILE | sed 's/\/mnt\/\(.*\)\//\1:\\/g')"
 
+powershell.exe -Command "Start-Process cmd \"/c icacls.exe \"\"C:\Program Files\WindowsApps\"\" /setowner \"\"BUILT IN\Administrators\"\" /t\" -Verb RunAs"
+sleep 3
 powershell.exe -Command "Start-Process cmd \"/c icacls.exe \"\"C:\Program Files\WindowsApps\"\" /restore \"\"$ACL_WIN_PATH\"\"\" -Verb RunAs"
-
+sleep 5
+powershell.exe -Command "Start-Process cmd \"/c icacls.exe \"\"C:\Program Files\WindowsApps\"\" /setowner \"\"NT SERVICE\TrustedInstaller\"\" /t\" -Verb RunAs"
 echo "The Folder 'C:\Program Files\WindowsApps' has been restored successfully"
