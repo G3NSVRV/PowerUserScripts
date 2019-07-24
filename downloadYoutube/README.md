@@ -32,7 +32,9 @@ https://rg3.github.io/youtube-dl/
 `sudo chmod a+rx /usr/local/bin/youtube-dl /usr/local/bin/downloadYoutube`
 
 ## 2. Usage
-`$: downloadYoutube $video_url`
+```
+$: downloadYoutube $video_url
+```
 
 #### example:
 ```
