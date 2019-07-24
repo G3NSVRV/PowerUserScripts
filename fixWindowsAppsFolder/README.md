@@ -1,6 +1,6 @@
-# Restore ACLs (permissions) on "C:\Program Files\WindowsApps" (UWP apps) Folder on Windows 10
+# Restore ACLs on "C:\Program Files\WindowsApps" Folder Windows 10
 
-This scripts restores all the ACLs on "C:\Program Files\WindowsApps" Folder automatically without any mayor user intervention.
+This scripts restores all the ACLs (permissions) on "C:\Program Files\WindowsApps" Folder (UWP apps) automatically without any mayor user intervention.
 
 ## PreCautions
 This script was designed to be used on Windows 10.
