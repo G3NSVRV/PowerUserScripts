@@ -52,3 +52,6 @@ Descargando en LD
 Deleting original file Batroll'd.f133.mp4 (pass -k to keep)
 Deleting original file Batroll'd.f171.webm (pass -k to keep)
 ```
+
+## Known Bugs
+#### Cannot download Playlists. This should be fixed soon :)
