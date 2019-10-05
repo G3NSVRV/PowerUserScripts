@@ -19,28 +19,28 @@ then
 			#######
 			for (( ; ; ))
 			do
-				if [ "$(($(eval "$var|grep 137")))" -eq "$((137))" ]
+				if [ "$(($(eval $(echo $var | grep 137))))" -eq "$((137))" ]
 				then
 					echo "Descargando en FHD"
 					$BINARY_PATH -f 137+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
 					break
 				fi
 
-				if [ "$(($(eval $(echo $var"|grep 136"))))" -eq "$((136))" ]
+				if [ "$(($(eval $(echo $var | grep 136))))" -eq "$((136))" ]
 				then
 					echo "Descargando en HD"
 					$BINARY_PATH -f 136+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
 					break
 				fi
 
-				if [ "$(($(eval $(echo $var"|grep 134"))))" -eq "$((134))" ]
+				if [ "$(($(eval $(echo $var | grep 134))))" -eq "$((134))" ]
 				then
 					echo "Descargando en SD";
 					$BINARY_PATH -f 134+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
 					break
 				fi
 
-				if [ "$(($(eval $(echo $var"|grep 133"))))" -eq "$((133))" ]
+				if [ "$(($(eval $(echo $var | grep 133))))" -eq "$((133))" ]
 				then
 					echo "Descargando en LD";
 					$BINARY_PATH -f 133+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
