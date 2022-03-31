@@ -1,11 +1,14 @@
-# downloadYoutube, youtube-dl for humans ;)
-This Script is intended to be a friendly "frontend" for youtube-dl which automatically download the higher definition available
+# downloadYoutube, yt-dlp for humans ;)
+This Script is intended to be a friendly "frontend" for ~youtube-dl~ yt-dlp which automatically download the higher definition available
 
-**youtube-dl** project
-https://rg3.github.io/youtube-dl/
+** update **
+I changed the main binary from youtube-dl to yt-dlp because has better download speeds; yt-dlp is a fork of youtube-dl plus extra features that can be used on future releases of this script.
 
-## 1. Install
-### (ffmpeg) it is mandatory to join video and audio in one file
+**yt-dlp** project
+https://github.com/yt-dlp/yt-dlp
+
+## 1. Dependencies
+### (ffmpeg) is mandatory to merge video and audio in one file:
 
 *(debian / ubuntu)* `sudo apt install ffmpeg`
 
@@ -15,25 +18,19 @@ https://rg3.github.io/youtube-dl/
 
 *(manual install)* `https://pkgs.org/download/ffmpeg`
 
-### (youtube-dl)
+### (yt-dlp):
 
-*(debian / ubuntu)* `sudo apt install youtube-dl`
+https://github.com/yt-dlp/yt-dlp#installation
 
-*(centos / redhat)* `sudo yum install youtube-dl`
+## 2. Installation
 
-*(archlinux (mainstream))* `sudo pacman -S youtube-dl`
-
-*(through pip)* `pip install youtube-dl`
-
-*(manual install)* `sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl`
-
-### (downloadYoutube)
+### (downloadYoutube):
 `sudo wget https://raw.githubusercontent.com/G3NSVRV/PowerUserScripts/master/downloadYoutube/downloadYoutube -O /usr/local/bin/downloadYoutube`
 
-### (add executable properties)
+### (add executable properties):
 `sudo chmod a+rx /usr/local/bin/downloadYoutube`
 
-## 2. Usage
+## 3. Usage
 ```
 $: downloadYoutube $videoUrl
 ```

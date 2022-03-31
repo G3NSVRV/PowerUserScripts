@@ -1,6 +1,6 @@
 #!/bin/bash
 VIDEO_URL=$1
-YTDL_PATH=$(which youtube-dl)
+YTDL_PATH=$(which yt-dlp)
 
 if [ -z "$(which ffmpeg)" ]
 then
@@ -19,30 +19,51 @@ then
 			#######
 			for (( ; ; ))
 			do
+				#if [ "$(($(eval $(echo "$var | grep 313"))))" -eq "$((313))" ]
+				#then
+				#	echo "Downloading video in 2160p"
+				#	$YTDL_PATH -f 313+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
+				#	break
+				#fi
+
+				#if [ "$(($(eval $(echo "$var | grep 271"))))" -eq "$((271))" ]
+				#then
+				#	echo "Downloading video in 1440p"
+				#	$YTDL_PATH -f 271+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
+				#	break
+				#fi
+
 				if [ "$(($(eval $(echo "$var | grep 137"))))" -eq "$((137))" ]
 				then
-					echo "Descargando en FHD"
+					echo "Downloading video in 1080p"
 					$YTDL_PATH -f 137+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
 					break
 				fi
 
 				if [ "$(($(eval $(echo "$var | grep 136"))))" -eq "$((136))" ]
 				then
-					echo "Descargando en HD"
+					echo "Downloading video in 720p"
 					$YTDL_PATH -f 136+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
+					break
+				fi
+
+				if [ "$(($(eval $(echo "$var | grep 135"))))" -eq "$((134))" ]
+				then
+					echo "Downloading video in 480p";
+					$YTDL_PATH -f 134+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
 					break
 				fi
 
 				if [ "$(($(eval $(echo "$var | grep 134"))))" -eq "$((134))" ]
 				then
-					echo "Descargando en SD";
+					echo "Downloading video in 360p";
 					$YTDL_PATH -f 134+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
 					break
 				fi
 
 				if [ "$(($(eval $(echo "$var | grep 133"))))" -eq "$((133))" ]
 				then
-					echo "Descargando en LD";
+					echo "Downloading video in 240p";
 					$YTDL_PATH -f 133+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
 					break
 				fi
