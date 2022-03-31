@@ -16,6 +16,10 @@ then
 		then
 			shift
 			var="$YTDL_PATH -F $VIDEO_URL | awk '{print \$1}'"
+			
+			# debug
+			# eval $var | grep "^136$"
+
 			#######
 			for (( ; ; ))
 			do
@@ -33,35 +37,35 @@ then
 				#	break
 				#fi
 
-				if [ "$(($(eval $(echo "$var | grep 137"))))" -eq "$((137))" ]
+				if [ "$(($(eval $(echo "$var | grep ^137$"))))" -eq "$((137))" ]
 				then
 					echo "Downloading video in 1080p"
 					$YTDL_PATH -f 137+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
 					break
 				fi
 
-				if [ "$(($(eval $(echo "$var | grep 136"))))" -eq "$((136))" ]
+				if [ "$(($(eval $(echo "$var | grep ^136$"))))" -eq "$((136))" ]
 				then
 					echo "Downloading video in 720p"
 					$YTDL_PATH -f 136+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
 					break
 				fi
 
-				if [ "$(($(eval $(echo "$var | grep 135"))))" -eq "$((134))" ]
+				if [ "$(($(eval $(echo "$var | grep ^135$"))))" -eq "$((134))" ]
 				then
 					echo "Downloading video in 480p";
 					$YTDL_PATH -f 134+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
 					break
 				fi
 
-				if [ "$(($(eval $(echo "$var | grep 134"))))" -eq "$((134))" ]
+				if [ "$(($(eval $(echo "$var | grep ^134$"))))" -eq "$((134))" ]
 				then
 					echo "Downloading video in 360p";
 					$YTDL_PATH -f 134+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
 					break
 				fi
 
-				if [ "$(($(eval $(echo "$var | grep 133"))))" -eq "$((133))" ]
+				if [ "$(($(eval $(echo "$var | grep ^133$"))))" -eq "$((133))" ]
 				then
 					echo "Downloading video in 240p";
 					$YTDL_PATH -f 133+140 --merge mp4 -o '%(title)s.%(ext)s' "$VIDEO_URL"
