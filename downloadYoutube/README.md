@@ -1,14 +1,15 @@
 # downloadYoutube, yt-dlp for humans ;)
-This Script is intended to be a friendly "frontend" for ~youtube-dl~ yt-dlp which automatically download the higher definition available
+This Script is intended to be a friendly "frontend" for ~youtube-dl~ **yt-dlp** which automatically download the higher definition available
 
-** update **
+**[update]**
+
 I changed the main binary from youtube-dl to yt-dlp because has better download speeds; yt-dlp is a fork of youtube-dl plus extra features that can be used on future releases of this script.
 
-**yt-dlp** project
+**yt-dlp** project:
 https://github.com/yt-dlp/yt-dlp
 
 ## 1. Dependencies
-### (ffmpeg) is mandatory to merge video and audio in one file:
+### - (ffmpeg) is mandatory to merge video and audio in one file:
 
 *(debian / ubuntu)* `sudo apt install ffmpeg`
 
@@ -18,16 +19,16 @@ https://github.com/yt-dlp/yt-dlp
 
 *(manual install)* `https://pkgs.org/download/ffmpeg`
 
-### (yt-dlp):
+### - (yt-dlp):
 
 https://github.com/yt-dlp/yt-dlp#installation
 
 ## 2. Installation
 
-### (downloadYoutube):
+### - (downloadYoutube):
 `sudo wget https://raw.githubusercontent.com/G3NSVRV/PowerUserScripts/master/downloadYoutube/downloadYoutube -O /usr/local/bin/downloadYoutube`
 
-### (add executable properties):
+### - (add executable properties):
 `sudo chmod a+rx /usr/local/bin/downloadYoutube`
 
 ## 3. Usage
